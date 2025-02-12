@@ -30,9 +30,10 @@ class _MobileScreenState extends State<MobileScreen> {
         title: Text("Mobile"),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          AspectRatio(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            AspectRatio(
               aspectRatio: 16 / 9,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -41,17 +42,26 @@ class _MobileScreenState extends State<MobileScreen> {
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     height: 300,
-                    decoration: BoxDecoration(color: Colors.blueGrey, borderRadius: BorderRadius.all(Radius.circular(10))),
-                    child: Icon(Icons.play_circle_outline_rounded, size: 60, color: Colors.white,),
+                    decoration: BoxDecoration(
+                      color: Colors.blueGrey,
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                    child: Icon(Icons.play_circle_outline_rounded, size: 60, color: Colors.white),
                   ),
                 ),
-              )),
-          Expanded(
-            child: ListView.builder(itemCount: videoList.length, itemBuilder: (context, index) => ListTile(
-              title: RecommendedVideos(videoList[index][0], videoList[index][1],)
-            )),
-          )
-        ],
+              ),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height,
+              child: ListView.builder(
+                itemCount: videoList.length,
+                itemBuilder: (context, index) => ListTile(
+                  title: RecommendedVideos(videoList[index][0], videoList[index][1]),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
