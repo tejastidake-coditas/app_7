@@ -65,7 +65,7 @@ class _DesktopScreenState extends State<DesktopScreen> {
         Expanded(
           flex: 6,
           child: AspectRatio(
-            aspectRatio: 16 / 9,
+            aspectRatio: 16 / 10,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(

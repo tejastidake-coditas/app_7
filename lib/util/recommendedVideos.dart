@@ -25,7 +25,7 @@ class RecommendedVideos extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(title, style: TextStyle(fontWeight: FontWeight.bold),),
+                    Text(title, style: TextStyle(fontWeight: FontWeight.bold), maxLines: 1, overflow: TextOverflow.ellipsis,),
                     SizedBox(height: 8,),
                     Text(description, style: TextStyle(letterSpacing: 0.01, fontSize: 13), maxLines: 3, overflow: TextOverflow.ellipsis, softWrap: true,)
                   ],

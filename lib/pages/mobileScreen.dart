@@ -34,7 +34,7 @@ class _MobileScreenState extends State<MobileScreen> {
         child: Column(
           children: [
             AspectRatio(
-              aspectRatio: 16 / 9,
+              aspectRatio: 16 / 10,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
